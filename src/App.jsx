@@ -12,6 +12,7 @@ import WatchHistory from "./Components/WatchHistory";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import Profile from "./Components/Profile.jsx";
+import BuyProducts from "./Components/BuyProducts.jsx"
 import { useState } from "react";
 import Rating from "./Components/Rating.jsx";
 
@@ -34,6 +35,17 @@ function App() {
             <>
               <Navbar setQuery={setQuery}  />
               <EnterProd />
+              <Footer />
+            </>
+          }
+        />
+        
+        <Route
+          path="/buy-products"
+          element={
+            <>
+              <Navbar setQuery={setQuery}  />
+              <BuyProducts/>
               <Footer />
             </>
           }
