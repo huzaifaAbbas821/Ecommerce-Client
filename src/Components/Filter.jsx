@@ -1,4 +1,5 @@
 import React from 'react'
+import { IoIosSearch } from "react-icons/io";
 
 function Filter({setQuery}) {
     return (
