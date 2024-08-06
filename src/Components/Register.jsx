@@ -9,6 +9,7 @@ function Register() {
   const [confirm, setConfirm] = useState("");
   const [errorConfirm, setErrorConfirm] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [ErrorMessage, setErrorMessage] = useState("");
   const navigate = useNavigate();
 
   const handleRegister = async (e) => {
@@ -35,7 +36,11 @@ function Register() {
 
       const responseData = await response.json();
 
-      if (!response.ok) {
+      if (response.status === 401) {
+        setErrorMessage("Fields are missing")
+        throw new Error(responseData.message);
+      } else if (response.status === 400) {
+        setErrorMessage("username or email Already exists")
         throw new Error(responseData.message);
       }
       
@@ -55,10 +60,7 @@ function Register() {
           Register
         </h1>
 
-        {successMessage && (
-          <div className="text-green-500 mb-4">{successMessage}</div>
-        )}
-
+        
         <form onSubmit={handleRegister} className="flex justify-center items-center flex-col">
           <div className="relative my-3">
             <label htmlFor="username" className="font-bold mb-2">Username</label>
@@ -73,6 +75,10 @@ function Register() {
                 setUsername(value);
               }}
             />
+            {ErrorMessage && (
+          <div className="text-red-500 mb-4">{ErrorMessage}</div>
+        )}
+
           </div>
           <div className="relative my-3">
             <label htmlFor="email" className="font-bold mb-2">Email</label>
@@ -84,6 +90,10 @@ function Register() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
+            {ErrorMessage && (
+          <div className="text-red-500 mb-4">{ErrorMessage}</div>
+        )}
+
           </div>
 
           <div className="relative my-3">
@@ -96,6 +106,7 @@ function Register() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+            {errorConfirm && <div className="text-red-500">{errorConfirm}</div>}
           </div>
 
           <div className="relative my-3 gap-y-2">
@@ -108,7 +119,6 @@ function Register() {
               value={confirm}
               onChange={(e) => setConfirm(e.target.value)}
             />
-            {errorConfirm && <div className="text-red-500">{errorConfirm}</div>}
           </div>
 
           <div className="flex justify-center items-center">
@@ -118,6 +128,8 @@ function Register() {
             >
               Submit
             </button>
+            {successMessage && <div className="text-greem-700">{successMessage}</div>}
+
           </div>
           <div>
             <span className="capitalize">
