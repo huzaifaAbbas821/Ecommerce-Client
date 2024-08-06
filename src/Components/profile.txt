@@ -1,0 +1,46 @@
+<div className="min-h-[80vh] w-screen  mx-2">
+       {/* username */}
+       <h1 className="text-2xl text-center font-bold">User Details</h1>
+       <hr className="h-2 my-2"/>
+       <h2 className="text-lg text-start font-semibold" >Username and Email Information</h2>
+       <hr className="h-2 my-2"/>
+      <div>
+         {/* display uername and Email */}
+        <div>
+            
+            <div className=" flex gap-x-4 items-center">
+                <span className="text-lg ">Username:</span>
+                <span className="text-gray-800">{username}</span>
+            </div>
+            
+            <div className=" flex gap-x-4 items-center">
+                <span className="text-lg">Email:</span>
+                <span className="text-gray-800">{Email}</span>
+            </div>
+        </div>
+         {/* change Username and Email */}
+          
+        <button>Change Username or Password</button>
+        <div>
+            <label htmlFor="username">Username</label>
+            <input type="text" name="username" id="username" />
+        </div>
+      </div>
+
+       {/* Change Password */}
+      <div>
+        <button>Change Password</button>
+         {/* oldPassword */}
+        <input type="text"  />
+         {/* newPassword */}
+        <input type="text"  />
+      </div>
+       {/* delete Account */}
+      <div>
+        <button>Delete Account</button>
+        <div>
+        <label>PassWord</label>
+        <input type="text"  placeholder="PassWord" />
+        </div>
+      </div>
+    </div>
