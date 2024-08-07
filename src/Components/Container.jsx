@@ -48,15 +48,15 @@ function Container({ query }) {
   });
 
   return (
-    <div className="min-h-[100vh] pt-[2vw] max-w-[100vw] bg-gray-100 text-white">
+    <div className="min-h-[100vh] pt-[2vw] max-w-[100vw] bg-[#ffffff] ">
       <span className="flex justify-start items-center m-2 md:px-6  text-black">
-        <label htmlFor="category" className="mr-3 text-base md:text-lg font-bold md:mx-2" >Filter by Category:</label>
+        <label htmlFor="category" className="mr-3 text-sm md:text-base font-bold md:mx-2" >Filter by Category:</label>
         <select
           required
           id="category"
           name="category"
           onChange={(e) => setFilterQuery(e.target.value)}
-          className='px-2 text-base md:text-lg border-2 border-black placeholder-gray-800 rounded-xl'
+          className='px-2 text-sm md:text-base border-2 border-black placeholder-gray-800 rounded-xl'
         >
           <option value="">All</option>
           <option value="clothes">Clothes</option>
@@ -64,7 +64,7 @@ function Container({ query }) {
           <option value="health product">Home & Kitchen</option>
         </select>
       </span>
-      <div className="min-h-[100vh] pt-[1vw] md:mt-5 max-w-[100vw] bg-gray-100 text-white grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 xl:gap-x-[3em] xl:p-[2vw] py-5 sm:px-[2vw] gap-y-[3em] xl:px-[4vw] justify-items-center">
+      <div className="min-h-[100vh] pt-[1vw] md:mt-2 max-w-[100vw] bg-[#ffffff] text-white grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 xl:gap-x-[3em] xl:p-[2vw] py-5 sm:px-[2vw] gap-y-[3em] xl:px-[4vw] justify-items-center">
         {loading ? (
           <div>Loading...</div>
         ) : (
