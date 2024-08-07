@@ -33,7 +33,7 @@ function Cards({ product }) {
       className="transform transition hover:scale-105 duration-300 2xl:w-[320px] 2xl:h-[400px] shadow-lg lg:w-[240px] lg:h-[290px] sm:w-[210px] sm:h-[270px] w-[150px] h-[220px] bg-gray-100 border-gray-300 text-black overflow-hidden rounded-sm sm:ml-0 ml-2"
     >
       <Link to={`/product/${product._id}`}>
-        <div className="image w-[100%] md:h-[70%] h-[60%] bg-black z-10 rounded-t-sm overflow-hidden bg-contain">
+        <div className="image w-[100%] md:h-[70%] h-[70%] bg-black z-10 rounded-t-sm overflow-hidden bg-contain">
           <img
             src={product.featuredImage}
             className="w-[100%] h-[100%]"

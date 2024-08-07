@@ -5,7 +5,7 @@ import { IoIosSearch } from "react-icons/io";
 const Filter = ({ setQuery }) => {
     return (
         <form 
-            className="search xs:hidden bg-gray-400 px-3 cursor-pointer rounded-sm overflow-hidden flex items-center justify-between gap-0"
+            className="search xs:hidden bg-gray-400 px-5 cursor-pointer rounded-sm overflow-hidden flex items-center justify-between gap-0"
             onSubmit={(e) => e.preventDefault()}
         >
             <input

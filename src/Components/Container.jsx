@@ -64,7 +64,7 @@ function Container({ query }) {
           <option value="health product">Home & Kitchen</option>
         </select>
       </span>
-      <div className="min-h-[100vh] pt-[1vw] md:mt-2 max-w-[100vw] bg-[#ffffff] text-white grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 xl:gap-x-[3em] xl:p-[2vw] py-5 sm:px-[2vw] gap-y-[3em] xl:px-[4vw] justify-items-center">
+      <div className="min-h-[100vh] pt-[1vw] mt-4 max-w-[100vw] bg-[#ffffff] text-white grid xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 xl:gap-x-[3em] xl:p-[2vw] py-5 sm:px-[2vw] gap-y-[3em] xl:px-[4vw] justify-items-center">
         {loading ? (
           <div>Loading...</div>
         ) : (
