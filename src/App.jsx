@@ -15,6 +15,7 @@ import Profile from "./Components/Profile.jsx";
 import BuyProducts from "./Components/BuyProducts.jsx"
 import { useState } from "react";
 import Rating from "./Components/Rating.jsx";
+import Filter from "./Components/Filter.jsx";
 
 const stripePromise = loadStripe( "pk_test_51NYU27DHq3QzD7GbaWIc7E7RSzoa3QCStBesHyU2IykhMKgBHjR9UK7XTMJcshAKC7bDEtVTuxR6V8ENTC6ERaek00XAIUJvIv" );
 
@@ -56,6 +57,7 @@ function App() {
           element={
             <>
               <Navbar setQuery={setQuery} />
+              <Filter setQuery={setQuery}/> 
               <Container query={query} />
               <Footer />
             </>
