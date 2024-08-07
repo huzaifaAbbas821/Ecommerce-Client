@@ -43,6 +43,10 @@ function Register() {
         setErrorMessage("username or email Already exists")
         throw new Error(responseData.message);
       }
+      else if (response.status === 500) {
+        setErrorMessage("Internal Server Error")
+        throw new Error(responseData.message);
+      }
       
       setSuccessMessage(responseData.message);
       navigate("/login")
