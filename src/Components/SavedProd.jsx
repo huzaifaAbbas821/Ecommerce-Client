@@ -7,20 +7,23 @@ function Container() {
 
   useEffect(() => {
     const fetchData = async () => {
-        const token = localStorage.getItem("accessToken");
-        if(!token){
-          return <div className="h-[90vh] flex justify-center items-center text-lg">
-                 Login to save Products 
-          </div>
-        }
+      const token = localStorage.getItem("accessToken");
+      if (!token) {
+        setLoading(false);
+        setError("Login to save Products");
+        return;
+      }
       try {
-        const response = await fetch("https://ecommerce-backend-l7uf.vercel.app/api/users/save-product", {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${token}`
+        const response = await fetch(
+          "https://ecommerce-backend-l7uf.vercel.app/api/users/save-product",
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${token}`,
+            },
           }
-        });
+        );
 
         // Check if the response is ok (status code 200-299)
         if (!response.ok) {
@@ -46,13 +49,11 @@ function Container() {
   }, []); // Empty dependency array ensures the effect runs only once
 
   return (
-    <div className='min-h-[100vh] xl:max-w-[100vw] w-screen bg-white text-white grid auto-rows-max xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 xl:gap-x-[4em] xl:p-[2vw] py-5 sm:px-[2vw] gap-y-[3em] xl:px-[4vw] mt-[2vw] justify-items-center'>
+    <div className="min-h-[100vh] xl:max-w-[100vw] w-screen bg-white text-white grid auto-rows-max xl:grid-cols-4 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 grid-cols-2 xl:gap-x-[4em] xl:p-[2vw] py-5 sm:px-[2vw] gap-y-[3em] xl:px-[4vw] mt-[2vw] justify-items-center">
       {loading ? (
         <div>Loading...</div>
       ) : (
-        data.map((product) => (
-          <Cards key={product._id} product={product} />
-        ))
+        data.map((product) => <Cards key={product._id} product={product} />)
       )}
     </div>
   );
