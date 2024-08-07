@@ -195,7 +195,7 @@ console.log(response)
           )}
 
           <div className="flex justify-center items-center gap-x-6 md:hidden ">
-            <Link>
+            <Link to={"/save-products"}>
               <FiHeart color="white" className="md:hidden w-5 h-5 sm:w-7 sm:h-7  " />
             </Link>
             <Link to="/cart">

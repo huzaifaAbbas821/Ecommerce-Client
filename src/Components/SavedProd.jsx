@@ -8,6 +8,11 @@ function Container() {
   useEffect(() => {
     const fetchData = async () => {
         const token = localStorage.getItem("accessToken");
+        if(!token){
+          return <div className="h-[90vh] flex justify-center items-center text-lg">
+                 Login to save Products 
+          </div>
+        }
       try {
         const response = await fetch("https://ecommerce-backend-l7uf.vercel.app/api/users/save-product", {
           method: "GET",
