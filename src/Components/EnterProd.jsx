@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import {useNavigator} from "react-router-dom"
+
+
+
+const navigate = useNavigator();
 
 function EnterProd() {
   const [formData, setFormData] = useState({
@@ -53,7 +58,10 @@ function EnterProd() {
           },
         }
       );
-      console.log(response.data);
+      // console.log(response.data);
+            if(response.status == 200){
+        navigate("/")
+      }
     } catch (error) {
       console.error("Error submitting the form", error);
     }
