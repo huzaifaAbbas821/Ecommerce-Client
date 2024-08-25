@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import {useNavigator} from "react-router-dom"
+import {useNavigate} from "react-router-dom"
 
 
 
-const navigate = useNavigator();
+const navigate = useNavigate();
 
 function EnterProd() {
   const [formData, setFormData] = useState({
