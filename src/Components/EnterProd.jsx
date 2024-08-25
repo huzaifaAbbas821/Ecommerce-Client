@@ -4,7 +4,6 @@ import {useNavigate} from "react-router-dom"
 
 
 
-const navigate = useNavigate();
 
 function EnterProd() {
   const [formData, setFormData] = useState({
@@ -18,6 +17,7 @@ function EnterProd() {
     featuredImage: null,
   });
 
+const navigate = useNavigate();
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
